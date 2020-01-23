@@ -1,0 +1,41 @@
+/* p {
+    color: green;
+
+} */
+
+.lklk {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.con {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pcon {
+    position: relative;
+}
+
+.pseoduExample {
+    position: relative;
+    cursor: progress;
+}
+
+.pseoduExample[hover-text]:hover::after {
+    content: attr(hover-text);
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1;
+    background-color: yellowgreen;
+    min-width: 150px;
+    
+}
