@@ -1,46 +1,53 @@
-* {
-    box-sizing: border-box;
-}
 
-.container {
-    position: relative;
+.element {
+    height: 150px;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
     margin: 10px;
-    padding: 55px;
-    border: 1px solid red;
-    
-    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes carousel {
+    from {
+        margin-left: 0px;
+    }
+
+    to {
+        margin-left: -1030px;
+    }
+}
+
+@media (max-width: 468px) {
+   .container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    animation: carousel 7s infinite alternate;
+   }
+
+   .element {
+    min-width: 150px;
+   }
+
+   .static {
+    overflow-x: hidden;
+    width: 90%;
+    margin-left: 5%;
+    margin-right:5%; 
+   }
 
 }
 
-.containerDiv {
-    position: relative;
-    padding: 55px;
-    border: 1px solid blue;
-    height: 200px;
-}
+@media (min-width: 469px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-.para {
-    position: absolute;
-    top: 70px;
-    left: 50px;
-    border: 1px solid yellow;
-}
-.popup {
-    position: relative;
-    border: 1px solid blueviolet;
-}
-.wrapper {
-    position: relative;
-    border: 1px solid pink;
-    height: 100px;
-}
-.popup:hover::after {
-    position: absolute;
-    content: "hi this is popup popping up";
-    min-width: 200px;
-    border: 1px solid grey;
-    background-color: khaki;
-    top:40px;
-    left: 20px;
-
+    .element {
+        width: 150px;
+    }
 }
